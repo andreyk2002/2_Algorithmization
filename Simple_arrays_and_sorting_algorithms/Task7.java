@@ -19,15 +19,13 @@ public class Task7 {
 
         Random rn = new Random();
         for (int i = 0; i < sizeFirst; i++) {
-            arr[i] = rn.nextInt(100) /( 1.0 * rn.nextInt(100));
+            arr[i] = rn.nextInt(100) / ( 1.0 * rn.nextInt(100));
         }
         selectionSort(arr);
         System.out.println("Первый массив: " + Arrays.toString(arr));
 
         int sizeSecond = 14;
         double[] secondArr = new double[sizeSecond];
-
-
 
         for (int i = 0; i < sizeSecond; i++) {
             secondArr[i] = rn.nextInt(100) / (1.0 * rn.nextInt(100));
