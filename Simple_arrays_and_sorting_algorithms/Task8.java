@@ -4,6 +4,7 @@
 package by.epam_tc.step1.t2.type3;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Task8 {
@@ -30,19 +31,16 @@ public class Task8 {
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите размер массива:");
-        int size = in.nextInt();
+        int size = 15;
         Fraction[] arr = new Fraction[size];
 
         int nom;
         int denom;
+        Random rn = new Random();
 
         for (int i = 0; i < size; i++) {
-            System.out.print("Введите числитель " + i + "-ой дроби: ");
-            nom = in.nextInt();
-            System.out.print("Введите знаменатель " + i + "-ой дроби: ");
-            denom = in.nextInt();
+            nom = rn.nextInt(500);
+            denom = rn.nextInt(500);
             arr[i] = new Fraction(nom, denom);
         }
         shellSort(arr);

@@ -16,7 +16,7 @@ public class Task2 {
         for (int i = 0; i < sizeFirst; i++) {
             arr[i] = rn.nextInt(40);
         }
-        Arrays.sort(arr);
+        selectionSort(arr);
 
         int sizeSecond = 14;
         int[] secondArr = new int[sizeSecond];
@@ -26,7 +26,7 @@ public class Task2 {
         for (int i = 0; i < sizeSecond; i++) {
             secondArr[i] = rn.nextInt(40);
         }
-        Arrays.sort(secondArr);
+        selectionSort(secondArr);
         int[] sumArr = new int[sizeFirst + sizeSecond];
 
 
@@ -52,5 +52,24 @@ public class Task2 {
         System.out.println("Неубывающая последовательность состоящая из всех элементов обоих массивов: "
                 + Arrays.toString(sumArr));
 
+    }
+    public static void selectionSort(int [] arr) {
+        int len;
+        len = arr.length;
+        int i = 0;
+        int maxIndex = 0;
+        while (i < len) {
+            for (int j = i; j < len; j++) {
+                if (arr[j] < arr[maxIndex]) {
+                    maxIndex = j;
+                }
+
+            }
+            int tmp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = tmp;
+            i++;
+            maxIndex = i;
+        }
     }
 }

@@ -8,32 +8,33 @@
 package by.epam_tc.step1.t2.type3;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Task7 {
     public static void main(String[] args) {
 
-        int sizeFirst = in.nextInt();
+        int sizeFirst = 11;
         double[] arr = new double[sizeFirst];
 
-
-        System.out.print("Введите элементы первого массива:");
+        Random rn = new Random();
         for (int i = 0; i < sizeFirst; i++) {
-            arr[i] = in.nextDouble();
+            arr[i] = rn.nextInt(100) /( 1.0 * rn.nextInt(100));
         }
-       selectionSort(arr);
+        selectionSort(arr);
+        System.out.println("Первый массив: " + Arrays.toString(arr));
 
-        System.out.print("Введите размер второго массива:");
-        int sizeSecond = in.nextInt();
+        int sizeSecond = 14;
         double[] secondArr = new double[sizeSecond];
 
 
-        System.out.print("Введите элементы второго массива:");
-        for (int i = 0; i < sizeSecond; i++) {
-            secondArr[i] = in.nextDouble();
-        }
-       selectionSort(secondArr);
 
+        for (int i = 0; i < sizeSecond; i++) {
+            secondArr[i] = rn.nextInt(100) / (1.0 * rn.nextInt(100));
+        }
+
+        selectionSort(secondArr);
+        System.out.println("Второй массив: " + Arrays.toString(secondArr));
         int counter1 = 0;
         int counter2 = 0;
         boolean inBounds1 = true;
@@ -68,7 +69,7 @@ public class Task7 {
         int maxIndex = 0;
         while (i < len) {
             for (int j = i; j < len; j++) {
-                if (arr[j] > arr[maxIndex]) {
+                if (arr[j] < arr[maxIndex]) {
                     maxIndex = j;
                 }
 
