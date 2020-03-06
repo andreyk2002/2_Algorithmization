@@ -21,8 +21,6 @@ public class Task2 {
         int sizeSecond = 14;
         int[] secondArr = new int[sizeSecond];
 
-
-
         for (int i = 0; i < sizeSecond; i++) {
             secondArr[i] = rn.nextInt(40);
         }
@@ -63,9 +61,10 @@ public class Task2 {
                 if (arr[j] < arr[maxIndex]) {
                     maxIndex = j;
                 }
-
             }
-            int tmp = arr[i];
+            
+            int tmp;
+            tmp = arr[i];
             arr[i] = arr[maxIndex];
             arr[maxIndex] = tmp;
             i++;
